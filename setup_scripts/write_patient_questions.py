@@ -75,7 +75,10 @@ def main(args):
                     pt_year_offsets[sid] = year_offset
 
                 row["CHART_TIMESTAMP"] = (row["CHARTTIME"] - DateOffset(years=pt_year_offsets[sid]))
-                note_date = row["CHART_TIMESTAMP"].strftime("%Y-%m-%d")
+                try:
+                    note_date = row["CHART_TIMESTAMP"].strftime("%Y-%m-%d")
+                except:
+                    note_date = "unknown date"
                 note_text = row["TEXT"]
                 note_type = row["CATEGORY"]
                 try:
