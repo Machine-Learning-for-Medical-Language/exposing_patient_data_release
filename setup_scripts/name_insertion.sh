@@ -1,4 +1,4 @@
-export setup_output_folder="setup_outputs/"
+export setup_output_folder="setup_outputs_simplified/"
 
 ## Replace REGEX with name
 

@@ -89,7 +89,7 @@ def run(input_file, input_names, output_csv, replace_pattern_with_name, insert_n
 
     subject_id_to_notes["TEXT"] = subject_id_to_notes["MOD_TEXT"]
 
-    subject_id_to_notes[["SUBJECT_ID", "TEXT"]].to_csv(output_csv, index=False)
+    subject_id_to_notes[["SUBJECT_ID", "CATEGORY", "FIRST_NAME", "LAST_NAME", "CHARTDATE", "CHARTTIME", "TEXT"]].to_csv(output_csv, index=False)
 
     if replace_pattern_with_name and not insert_name_at_bos:
         print("Num Modified", subject_id_to_notes[subject_id_to_notes.MODIFIED].SUBJECT_ID.unique().size)

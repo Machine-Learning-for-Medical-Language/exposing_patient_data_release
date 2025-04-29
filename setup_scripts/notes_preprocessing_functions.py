@@ -55,8 +55,8 @@ def preprocess_text(text: str, sentencize: bool = True):
     text = text.replace("\r", " ")
     text = text.strip()
     text = text.lower()
-    text = string_cleanup(text)
+    #text = string_cleanup(text)
 
-    if sentencize:
-        text = convert_to_sentence(text)
+    #if sentencize:
+        #text = convert_to_sentence(text)
     return text

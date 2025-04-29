@@ -15,7 +15,7 @@ def run(input_file, output_file):
 
     notes_df = notes_df[~notes_df.TEXT.isna()]
     notes_df = notes_df[notes_df.TEXT.apply(lambda x: len(x.strip()) > 0)]
-    notes_df = notes_df[["SUBJECT_ID", "TEXT"]].sort_values(by="SUBJECT_ID")
+    notes_df = notes_df[["SUBJECT_ID", "CATEGORY", "CHARTDATE", "CHARTTIME", "TEXT"]].sort_values(by="SUBJECT_ID")
 
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     notes_df.to_csv(output_file, index=False)
